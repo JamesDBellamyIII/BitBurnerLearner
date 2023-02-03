@@ -6,7 +6,11 @@
             // If the server's security level is above our threshold, weaken it
             await ns.weaken(target);
 
-        } else if (ns.getServerMoneyAvailable(target) < moneyThresh) {
+            } else if (ns.getServerMoneyAvailable(target) < moneyThresh) {
         
             // If the server's money is less than our threshold, grow it
             await ns.grow(target);}
+            
+            } else {
+            // Otherwise, hack it
+            await ns.hack(target);}
