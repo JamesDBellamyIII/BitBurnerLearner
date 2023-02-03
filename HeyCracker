@@ -1,0 +1,27 @@
+@@ -0,0 +1,50 @@
+/** @param {NS} ns */
+export async function main(ns) {
+	ns.tail();
+
+var target = ns.getHostname();
+  
+    if (ns.fileExists("HTTPWorm.exe", "home")) {
+    ns.HTTPWorm(target);
+    }
+    if (ns.fileExists("relaySMTP.exe", "home")) {
+    ns.relaySMTP(target);
+    }
+    if (ns.fileExists("FTPCrack.exe", "home")) {
+    ns.FTPCrack(target);
+    }
+    if (ns.fileExists("SQLInject.exe", "home")) {
+    ns.SQLInject(target);
+    }
+    if (ns.fileExists("BruteSSH.exe", "home")) {
+    ns.brutessh(target);
+    }
+    // Get root access to target server
+    ns.nuke(target);
+    ns.hack(target);
+  
+    run [Drain] [-t n] [--tail] [args...]
